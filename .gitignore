@@ -3,6 +3,8 @@
 ##
 ## Get latest from https://github.com/github/gitignore/blob/master/VisualStudio.gitignore
 
+ms_access_stuff/Database1.laccdb
+
 # User-specific files
 *.rsuser
 *.suo
