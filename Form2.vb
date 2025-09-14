@@ -18,9 +18,9 @@ Public Class Form2
 
     Private Sub Form1_Resize(sender As Object, e As EventArgs) Handles MyBase.Resize
         CenterPanel()
-        hidePanels()
+        HidePanels()
     End Sub
-    Private Sub hidePanels()
+    Private Sub HidePanels()
         REGISTER_PANEL.Visible = False
         LOGIN_PANEL.Visible = True
     End Sub
@@ -173,7 +173,7 @@ Public Class Form2
             MessageBox.Show("Login Successful!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information)
             current_username = Login_username.Text
             Me.Hide()
-            Form1.ShowDialog()
+            MainForm.ShowDialog()
             Me.Show()
             Login_username.Text = ""
             Login_password.Text = ""
@@ -182,7 +182,7 @@ Public Class Form2
             MessageBox.Show("Login Successful!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information)
             current_username = Login_username.Text
             Me.Hide()
-            Form1.ShowDialog()
+            MainForm.ShowDialog()
             Me.Show()
             Login_username.Text = ""
             Login_password.Text = ""
