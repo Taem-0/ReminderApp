@@ -55,10 +55,12 @@ Partial Class Form1
         ' 
         ' MenuStrip1
         ' 
+        MenuStrip1.ImageScalingSize = New Size(20, 20)
         MenuStrip1.Items.AddRange(New ToolStripItem() {FileToolStripMenuItem, EditToolStripMenuItem, ViewToolStripMenuItem})
         MenuStrip1.Location = New Point(0, 0)
         MenuStrip1.Name = "MenuStrip1"
-        MenuStrip1.Size = New Size(348, 24)
+        MenuStrip1.Padding = New Padding(7, 3, 0, 3)
+        MenuStrip1.Size = New Size(398, 30)
         MenuStrip1.TabIndex = 0
         MenuStrip1.Text = "MenuStrip1"
         ' 
@@ -66,129 +68,131 @@ Partial Class Form1
         ' 
         FileToolStripMenuItem.DropDownItems.AddRange(New ToolStripItem() {NewReminderToolStripMenuItem, ExitToolStripMenuItem})
         FileToolStripMenuItem.Name = "FileToolStripMenuItem"
-        FileToolStripMenuItem.Size = New Size(37, 20)
+        FileToolStripMenuItem.Size = New Size(46, 24)
         FileToolStripMenuItem.Text = "File"
         ' 
         ' NewReminderToolStripMenuItem
         ' 
         NewReminderToolStripMenuItem.Name = "NewReminderToolStripMenuItem"
-        NewReminderToolStripMenuItem.Size = New Size(149, 22)
+        NewReminderToolStripMenuItem.Size = New Size(186, 26)
         NewReminderToolStripMenuItem.Text = "New reminder"
         ' 
         ' ExitToolStripMenuItem
         ' 
         ExitToolStripMenuItem.Name = "ExitToolStripMenuItem"
-        ExitToolStripMenuItem.Size = New Size(149, 22)
+        ExitToolStripMenuItem.Size = New Size(186, 26)
         ExitToolStripMenuItem.Text = "Exit"
         ' 
         ' EditToolStripMenuItem
         ' 
         EditToolStripMenuItem.DropDownItems.AddRange(New ToolStripItem() {NewReminderToolStripMenuItem1, EditReminderToolStripMenuItem, DeleteReminderToolStripMenuItem, MarkAsDoneToolStripMenuItem})
         EditToolStripMenuItem.Name = "EditToolStripMenuItem"
-        EditToolStripMenuItem.Size = New Size(39, 20)
+        EditToolStripMenuItem.Size = New Size(49, 24)
         EditToolStripMenuItem.Text = "Edit"
         ' 
         ' NewReminderToolStripMenuItem1
         ' 
         NewReminderToolStripMenuItem1.Name = "NewReminderToolStripMenuItem1"
-        NewReminderToolStripMenuItem1.Size = New Size(158, 22)
+        NewReminderToolStripMenuItem1.Size = New Size(200, 26)
         NewReminderToolStripMenuItem1.Text = "New reminder"
         ' 
         ' EditReminderToolStripMenuItem
         ' 
         EditReminderToolStripMenuItem.Name = "EditReminderToolStripMenuItem"
-        EditReminderToolStripMenuItem.Size = New Size(158, 22)
+        EditReminderToolStripMenuItem.Size = New Size(200, 26)
         EditReminderToolStripMenuItem.Text = "Edit reminder"
         ' 
         ' DeleteReminderToolStripMenuItem
         ' 
         DeleteReminderToolStripMenuItem.Name = "DeleteReminderToolStripMenuItem"
-        DeleteReminderToolStripMenuItem.Size = New Size(158, 22)
+        DeleteReminderToolStripMenuItem.Size = New Size(200, 26)
         DeleteReminderToolStripMenuItem.Text = "Delete reminder"
         ' 
         ' MarkAsDoneToolStripMenuItem
         ' 
         MarkAsDoneToolStripMenuItem.Name = "MarkAsDoneToolStripMenuItem"
-        MarkAsDoneToolStripMenuItem.Size = New Size(158, 22)
+        MarkAsDoneToolStripMenuItem.Size = New Size(200, 26)
         MarkAsDoneToolStripMenuItem.Text = "Mark as done"
         ' 
         ' ViewToolStripMenuItem
         ' 
         ViewToolStripMenuItem.DropDownItems.AddRange(New ToolStripItem() {ShowAllToolStripMenuItem, ShowTodayToolStripMenuItem, ShowUpcomingToolStripMenuItem, ShowCompletedToolStripMenuItem, SortByToolStripMenuItem})
         ViewToolStripMenuItem.Name = "ViewToolStripMenuItem"
-        ViewToolStripMenuItem.Size = New Size(44, 20)
+        ViewToolStripMenuItem.Size = New Size(55, 24)
         ViewToolStripMenuItem.Text = "View"
         ' 
         ' ShowAllToolStripMenuItem
         ' 
         ShowAllToolStripMenuItem.Name = "ShowAllToolStripMenuItem"
-        ShowAllToolStripMenuItem.Size = New Size(163, 22)
+        ShowAllToolStripMenuItem.Size = New Size(204, 26)
         ShowAllToolStripMenuItem.Text = "Show all"
         ' 
         ' ShowTodayToolStripMenuItem
         ' 
         ShowTodayToolStripMenuItem.Name = "ShowTodayToolStripMenuItem"
-        ShowTodayToolStripMenuItem.Size = New Size(163, 22)
+        ShowTodayToolStripMenuItem.Size = New Size(204, 26)
         ShowTodayToolStripMenuItem.Text = "Show today"
         ' 
         ' ShowUpcomingToolStripMenuItem
         ' 
         ShowUpcomingToolStripMenuItem.Name = "ShowUpcomingToolStripMenuItem"
-        ShowUpcomingToolStripMenuItem.Size = New Size(163, 22)
+        ShowUpcomingToolStripMenuItem.Size = New Size(204, 26)
         ShowUpcomingToolStripMenuItem.Text = "Show upcoming"
         ' 
         ' ShowCompletedToolStripMenuItem
         ' 
         ShowCompletedToolStripMenuItem.Name = "ShowCompletedToolStripMenuItem"
-        ShowCompletedToolStripMenuItem.Size = New Size(163, 22)
+        ShowCompletedToolStripMenuItem.Size = New Size(204, 26)
         ShowCompletedToolStripMenuItem.Text = "Show completed"
         ' 
         ' SortByToolStripMenuItem
         ' 
         SortByToolStripMenuItem.DropDownItems.AddRange(New ToolStripItem() {TitleToolStripMenuItem, DateToolStripMenuItem, DueDateToolStripMenuItem})
         SortByToolStripMenuItem.Name = "SortByToolStripMenuItem"
-        SortByToolStripMenuItem.Size = New Size(163, 22)
+        SortByToolStripMenuItem.Size = New Size(204, 26)
         SortByToolStripMenuItem.Text = "Sort by"
         ' 
         ' TitleToolStripMenuItem
         ' 
         TitleToolStripMenuItem.Name = "TitleToolStripMenuItem"
-        TitleToolStripMenuItem.Size = New Size(121, 22)
+        TitleToolStripMenuItem.Size = New Size(153, 26)
         TitleToolStripMenuItem.Text = "Title"
         ' 
         ' DateToolStripMenuItem
         ' 
         DateToolStripMenuItem.Name = "DateToolStripMenuItem"
-        DateToolStripMenuItem.Size = New Size(121, 22)
+        DateToolStripMenuItem.Size = New Size(153, 26)
         DateToolStripMenuItem.Text = "Due date"
         ' 
         ' DueDateToolStripMenuItem
         ' 
         DueDateToolStripMenuItem.Name = "DueDateToolStripMenuItem"
-        DueDateToolStripMenuItem.Size = New Size(121, 22)
+        DueDateToolStripMenuItem.Size = New Size(153, 26)
         DueDateToolStripMenuItem.Text = "Status"
         ' 
         ' Panel1
         ' 
-        Panel1.Location = New Point(0, 27)
+        Panel1.Location = New Point(0, 36)
+        Panel1.Margin = New Padding(3, 4, 3, 4)
         Panel1.Name = "Panel1"
-        Panel1.Size = New Size(348, 79)
+        Panel1.Size = New Size(398, 105)
         Panel1.TabIndex = 1
         ' 
         ' ToolStrip1
         ' 
         ToolStrip1.Dock = DockStyle.None
+        ToolStrip1.ImageScalingSize = New Size(20, 20)
         ToolStrip1.Items.AddRange(New ToolStripItem() {ToolStripLabel1, ToolStripLabel2, ToolStripLabel3, ToolStripLabel4, ToolStripLabel5})
-        ToolStrip1.Location = New Point(0, 109)
+        ToolStrip1.Location = New Point(0, 145)
         ToolStrip1.Name = "ToolStrip1"
-        ToolStrip1.Size = New Size(189, 25)
+        ToolStrip1.Size = New Size(240, 25)
         ToolStrip1.TabIndex = 2
         ToolStrip1.Text = "ToolStrip1"
         ' 
         ' ToolStripLabel1
         ' 
         ToolStripLabel1.Name = "ToolStripLabel1"
-        ToolStripLabel1.Size = New Size(31, 22)
+        ToolStripLabel1.Size = New Size(39, 22)
         ToolStripLabel1.Text = "New"
         ' 
         ' ToolStripLabel2
@@ -199,39 +203,42 @@ Partial Class Form1
         ' ToolStripLabel3
         ' 
         ToolStripLabel3.Name = "ToolStripLabel3"
-        ToolStripLabel3.Size = New Size(27, 22)
+        ToolStripLabel3.Size = New Size(35, 22)
         ToolStripLabel3.Text = "Edit"
         ' 
         ' ToolStripLabel4
         ' 
         ToolStripLabel4.Name = "ToolStripLabel4"
-        ToolStripLabel4.Size = New Size(40, 22)
+        ToolStripLabel4.Size = New Size(53, 22)
         ToolStripLabel4.Text = "Delete"
         ' 
         ' ToolStripLabel5
         ' 
         ToolStripLabel5.Name = "ToolStripLabel5"
-        ToolStripLabel5.Size = New Size(79, 22)
+        ToolStripLabel5.Size = New Size(100, 22)
         ToolStripLabel5.Text = "Mark as Done"
         ' 
         ' DataGridView1
         ' 
         DataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        DataGridView1.Location = New Point(0, 137)
+        DataGridView1.Location = New Point(0, 183)
+        DataGridView1.Margin = New Padding(3, 4, 3, 4)
         DataGridView1.Name = "DataGridView1"
-        DataGridView1.Size = New Size(348, 273)
+        DataGridView1.RowHeadersWidth = 51
+        DataGridView1.Size = New Size(398, 364)
         DataGridView1.TabIndex = 3
         ' 
         ' Form1
         ' 
-        AutoScaleDimensions = New SizeF(7F, 15F)
+        AutoScaleDimensions = New SizeF(8F, 20F)
         AutoScaleMode = AutoScaleMode.Font
-        ClientSize = New Size(348, 450)
+        ClientSize = New Size(398, 600)
         Controls.Add(DataGridView1)
         Controls.Add(ToolStrip1)
         Controls.Add(Panel1)
         Controls.Add(MenuStrip1)
         MainMenuStrip = MenuStrip1
+        Margin = New Padding(3, 4, 3, 4)
         Name = "Form1"
         Text = " "
         MenuStrip1.ResumeLayout(False)

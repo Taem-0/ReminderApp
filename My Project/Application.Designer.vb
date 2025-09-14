@@ -24,16 +24,16 @@ Namespace My
         <Global.System.Diagnostics.DebuggerStepThroughAttribute()>  _
         Public Sub New()
             MyBase.New(Global.Microsoft.VisualBasic.ApplicationServices.AuthenticationMode.Windows)
-            Me.IsSingleInstance = false
+            Me.IsSingleInstance = true
             Me.EnableVisualStyles = true
             Me.SaveMySettingsOnExit = true
             Me.ShutDownStyle = Global.Microsoft.VisualBasic.ApplicationServices.ShutdownMode.AfterMainFormCloses
-            Me.HighDpiMode = HighDpiMode.DpiUnaware
+            Me.HighDpiMode = HighDpiMode.PerMonitor
         End Sub
         
         <Global.System.Diagnostics.DebuggerStepThroughAttribute()>  _
         Protected Overrides Sub OnCreateMainForm()
-            Me.MainForm = Global.ReminderSys.Form1
+            Me.MainForm = Global.ReminderSys.Form2
         End Sub
         
         <Global.System.Diagnostics.DebuggerStepThroughAttribute()>  _
