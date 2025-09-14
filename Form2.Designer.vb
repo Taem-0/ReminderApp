@@ -256,7 +256,7 @@ Partial Class Form2
         ' 
         AutoScaleMode = AutoScaleMode.None
         BackColor = SystemColors.ButtonFace
-        ClientSize = New Size(1283, 545)
+        ClientSize = New Size(661, 545)
         Controls.Add(LOGIN_PANEL)
         Controls.Add(REGISTER_PANEL)
         Name = "Form2"
