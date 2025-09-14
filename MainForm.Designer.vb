@@ -236,9 +236,9 @@ Partial Class MainForm
         Label1.TabIndex = 4
         Label1.Text = "Label1"
         ' 
-        ' Form1
+        ' MainForm
         ' 
-        AutoScaleDimensions = New SizeF(7F, 15F)
+        AutoScaleDimensions = New SizeF(7.0F, 15.0F)
         AutoScaleMode = AutoScaleMode.Font
         ClientSize = New Size(359, 440)
         Controls.Add(Label1)
@@ -247,7 +247,7 @@ Partial Class MainForm
         Controls.Add(Panel1)
         Controls.Add(MenuStrip1)
         MainMenuStrip = MenuStrip1
-        Name = "Form1"
+        Name = "MainForm"
         Text = " "
         MenuStrip1.ResumeLayout(False)
         MenuStrip1.PerformLayout()
