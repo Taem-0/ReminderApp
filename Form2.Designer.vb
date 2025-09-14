@@ -26,9 +26,11 @@ Partial Class Form2
         Register_btnRegister = New Button()
         Register_btnCancel = New Button()
         REGISTER_PANEL = New Panel()
+        Register_showpass = New CheckBox()
         Label5 = New Label()
         Register_confirmpass = New TextBox()
         LOGIN_PANEL = New Panel()
+        Login_showpass = New CheckBox()
         LinkLabel1 = New LinkLabel()
         Label1 = New Label()
         Label2 = New Label()
@@ -84,7 +86,6 @@ Partial Class Form2
         ' 
         Register_password.Location = New Point(211, 147)
         Register_password.Name = "Register_password"
-        Register_password.PasswordChar = "*"c
         Register_password.Size = New Size(284, 27)
         Register_password.TabIndex = 4
         ' 
@@ -92,7 +93,7 @@ Partial Class Form2
         ' 
         Register_btnRegister.BackColor = SystemColors.GradientActiveCaption
         Register_btnRegister.Font = New Font("Segoe UI Semibold", 10.8F, FontStyle.Bold)
-        Register_btnRegister.Location = New Point(211, 251)
+        Register_btnRegister.Location = New Point(211, 293)
         Register_btnRegister.Name = "Register_btnRegister"
         Register_btnRegister.Size = New Size(119, 35)
         Register_btnRegister.TabIndex = 7
@@ -103,7 +104,7 @@ Partial Class Form2
         ' 
         Register_btnCancel.BackColor = SystemColors.GradientActiveCaption
         Register_btnCancel.Font = New Font("Segoe UI Semibold", 10.8F, FontStyle.Bold)
-        Register_btnCancel.Location = New Point(376, 251)
+        Register_btnCancel.Location = New Point(376, 293)
         Register_btnCancel.Name = "Register_btnCancel"
         Register_btnCancel.Size = New Size(119, 35)
         Register_btnCancel.TabIndex = 8
@@ -112,6 +113,7 @@ Partial Class Form2
         ' 
         ' REGISTER_PANEL
         ' 
+        REGISTER_PANEL.Controls.Add(Register_showpass)
         REGISTER_PANEL.Controls.Add(Label5)
         REGISTER_PANEL.Controls.Add(Register_confirmpass)
         REGISTER_PANEL.Controls.Add(lblTitle)
@@ -125,6 +127,16 @@ Partial Class Form2
         REGISTER_PANEL.Name = "REGISTER_PANEL"
         REGISTER_PANEL.Size = New Size(564, 331)
         REGISTER_PANEL.TabIndex = 9
+        ' 
+        ' Register_showpass
+        ' 
+        Register_showpass.AutoSize = True
+        Register_showpass.Location = New Point(209, 230)
+        Register_showpass.Name = "Register_showpass"
+        Register_showpass.Size = New Size(134, 24)
+        Register_showpass.TabIndex = 11
+        Register_showpass.Text = "Show password"
+        Register_showpass.UseVisualStyleBackColor = True
         ' 
         ' Label5
         ' 
@@ -141,12 +153,12 @@ Partial Class Form2
         ' 
         Register_confirmpass.Location = New Point(211, 196)
         Register_confirmpass.Name = "Register_confirmpass"
-        Register_confirmpass.PasswordChar = "*"c
         Register_confirmpass.Size = New Size(284, 27)
         Register_confirmpass.TabIndex = 10
         ' 
         ' LOGIN_PANEL
         ' 
+        LOGIN_PANEL.Controls.Add(Login_showpass)
         LOGIN_PANEL.Controls.Add(LinkLabel1)
         LOGIN_PANEL.Controls.Add(Label1)
         LOGIN_PANEL.Controls.Add(Label2)
@@ -159,13 +171,23 @@ Partial Class Form2
         LOGIN_PANEL.Size = New Size(564, 331)
         LOGIN_PANEL.TabIndex = 10
         ' 
+        ' Login_showpass
+        ' 
+        Login_showpass.AutoSize = True
+        Login_showpass.Location = New Point(209, 180)
+        Login_showpass.Name = "Login_showpass"
+        Login_showpass.Size = New Size(134, 24)
+        Login_showpass.TabIndex = 10
+        Login_showpass.Text = "Show password"
+        Login_showpass.UseVisualStyleBackColor = True
+        ' 
         ' LinkLabel1
         ' 
         LinkLabel1.ActiveLinkColor = Color.Orchid
         LinkLabel1.AutoSize = True
         LinkLabel1.Font = New Font("Segoe UI", 11F)
         LinkLabel1.LinkColor = Color.Blue
-        LinkLabel1.Location = New Point(131, 256)
+        LinkLabel1.Location = New Point(161, 277)
         LinkLabel1.Name = "LinkLabel1"
         LinkLabel1.Size = New Size(334, 25)
         LinkLabel1.TabIndex = 9
@@ -198,7 +220,7 @@ Partial Class Form2
         ' 
         Login_btn.BackColor = SystemColors.GradientActiveCaption
         Login_btn.Font = New Font("Segoe UI Semibold", 10.8F, FontStyle.Bold)
-        Login_btn.Location = New Point(249, 205)
+        Login_btn.Location = New Point(279, 226)
         Login_btn.Name = "Login_btn"
         Login_btn.Size = New Size(119, 35)
         Login_btn.TabIndex = 7
@@ -227,7 +249,6 @@ Partial Class Form2
         ' 
         Login_password.Location = New Point(211, 147)
         Login_password.Name = "Login_password"
-        Login_password.PasswordChar = "*"c
         Login_password.Size = New Size(284, 27)
         Login_password.TabIndex = 4
         ' 
@@ -235,7 +256,7 @@ Partial Class Form2
         ' 
         AutoScaleMode = AutoScaleMode.None
         BackColor = SystemColors.ButtonFace
-        ClientSize = New Size(743, 545)
+        ClientSize = New Size(1283, 545)
         Controls.Add(LOGIN_PANEL)
         Controls.Add(REGISTER_PANEL)
         Name = "Form2"
@@ -266,4 +287,6 @@ Partial Class Form2
     Friend WithEvents Label5 As Label
     Friend WithEvents Register_confirmpass As TextBox
     Friend WithEvents LinkLabel1 As LinkLabel
+    Friend WithEvents Login_showpass As CheckBox
+    Friend WithEvents Register_showpass As CheckBox
 End Class

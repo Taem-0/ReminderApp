@@ -48,6 +48,7 @@ Partial Class Form1
         ToolStripLabel4 = New ToolStripLabel()
         ToolStripLabel5 = New ToolStripLabel()
         DataGridView1 = New DataGridView()
+        Label1 = New Label()
         MenuStrip1.SuspendLayout()
         ToolStrip1.SuspendLayout()
         CType(DataGridView1, ComponentModel.ISupportInitialize).BeginInit()
@@ -228,11 +229,21 @@ Partial Class Form1
         DataGridView1.Size = New Size(398, 364)
         DataGridView1.TabIndex = 3
         ' 
+        ' Label1
+        ' 
+        Label1.AutoSize = True
+        Label1.Location = New Point(12, 563)
+        Label1.Name = "Label1"
+        Label1.Size = New Size(53, 20)
+        Label1.TabIndex = 4
+        Label1.Text = "Label1"
+        ' 
         ' Form1
         ' 
         AutoScaleDimensions = New SizeF(8F, 20F)
         AutoScaleMode = AutoScaleMode.Font
         ClientSize = New Size(398, 600)
+        Controls.Add(Label1)
         Controls.Add(DataGridView1)
         Controls.Add(ToolStrip1)
         Controls.Add(Panel1)
@@ -276,5 +287,6 @@ Partial Class Form1
     Friend WithEvents ToolStripLabel4 As ToolStripLabel
     Friend WithEvents ToolStripLabel5 As ToolStripLabel
     Friend WithEvents DataGridView1 As DataGridView
+    Friend WithEvents Label1 As Label
 
 End Class
