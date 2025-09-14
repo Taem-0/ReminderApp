@@ -12,12 +12,11 @@ Public Class MainForm
         Dim db As New DBmanager()
         reminderView.DataSource = db.LoadDBdata()
         reminderView.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill
-
+        reminderView.RowHeadersVisible = False
     End Sub
 
     Private Sub NewReminder_Click(sender As Object, e As EventArgs) Handles newReminder.Click
         AddWindow.Show()
-
     End Sub
 
 

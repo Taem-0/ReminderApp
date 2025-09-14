@@ -8,6 +8,10 @@
         Me.Close()
     End Sub
 
+    Private Sub ExButton_Click(sender As Object, e As EventArgs) Handles ExButton.Click
+        Me.Close()
+    End Sub
+
     Private Sub ProcessAdd()
 
         Dim reminderTitle As String = ReminderTitleBox.Text
@@ -25,7 +29,6 @@
         ReminderController.PostReminder(reminder)
 
     End Sub
-
 
 
 End Class

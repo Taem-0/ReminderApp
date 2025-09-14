@@ -45,7 +45,7 @@ Partial Class AddWindow
         ' Label1
         ' 
         Label1.AutoSize = True
-        Label1.Font = New Font("MS Gothic", 9.0F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
+        Label1.Font = New Font("MS Gothic", 9F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
         Label1.Location = New Point(13, 17)
         Label1.Margin = New Padding(4, 0, 4, 0)
         Label1.Name = "Label1"
@@ -83,7 +83,7 @@ Partial Class AddWindow
         ' Label2
         ' 
         Label2.AutoSize = True
-        Label2.Font = New Font("MS PGothic", 9.0F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
+        Label2.Font = New Font("MS PGothic", 9F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
         Label2.Location = New Point(13, 284)
         Label2.Margin = New Padding(4, 0, 4, 0)
         Label2.Name = "Label2"
@@ -95,7 +95,7 @@ Partial Class AddWindow
         ' Label3
         ' 
         Label3.AutoSize = True
-        Label3.Font = New Font("MS Gothic", 9.0F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
+        Label3.Font = New Font("MS Gothic", 9F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
         Label3.Location = New Point(13, 54)
         Label3.Margin = New Padding(4, 0, 4, 0)
         Label3.Name = "Label3"
@@ -124,7 +124,7 @@ Partial Class AddWindow
         ' 
         ' AddWindow
         ' 
-        AutoScaleDimensions = New SizeF(7.0F, 15.0F)
+        AutoScaleDimensions = New SizeF(7F, 15F)
         AutoScaleMode = AutoScaleMode.Font
         ClientSize = New Size(359, 380)
         Controls.Add(ExButton)
