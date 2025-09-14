@@ -13,12 +13,12 @@ Public Class Form2
 
     Private Sub Form2_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         CenterPanel()
+        hidePanels()
         Login_password.UseSystemPasswordChar = True
     End Sub
 
     Private Sub Form1_Resize(sender As Object, e As EventArgs) Handles MyBase.Resize
         CenterPanel()
-        hidePanels()
     End Sub
     Private Sub hidePanels()
         REGISTER_PANEL.Visible = False
@@ -111,7 +111,7 @@ Public Class Form2
         End If
 
         Try
-            Using cmd As New OleDbCommand("INSERT INTO Accounts ([USERNAME], [PASSWORD], [EMAIL]) VALUES (@Username, @Password, @Email)", Conn)
+            Using cmd As New OleDbCommand("INSERT INTO Accounts ([USERNAME], [PASSWORD]) VALUES (@Username, @Password)", Conn)
 
                 cmd.Parameters.AddWithValue("@Username", Register_username.Text)
                 cmd.Parameters.AddWithValue("@Password", Register_password.Text)
