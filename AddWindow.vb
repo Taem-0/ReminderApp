@@ -1,10 +1,7 @@
 ﻿Public Class AddWindow
-
-
-
     Private Sub SaveButton_Click(sender As Object, e As EventArgs) Handles SaveButton.Click
         ProcessAdd()
-
+        MainForm.LoadDB()
         Me.Close()
     End Sub
 

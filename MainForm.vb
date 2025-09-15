@@ -3,25 +3,21 @@
 Public Class MainForm
 
     Private Sub MainForm_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        Label1.Text = "Logged in as: " & Form2.current_username
+        Label1.Text = "Logged in as: " & LoginForm.current_username
         LoadDB()
     End Sub
 
 
-    Private Sub LoadDB()
+    Public Sub LoadDB()
         Dim db As New DBmanager()
-        reminderView.DataSource = db.LoadDBdata()
+        reminderView.DataSource = db.LoadDBdata(LoginForm.current_username)
         reminderView.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill
         reminderView.RowHeadersVisible = False
     End Sub
 
     Private Sub NewReminder_Click(sender As Object, e As EventArgs) Handles newReminder.Click
-        AddWindow.Show()
+        AddWindow.ShowDialog()
     End Sub
-
-
-
-
 
 
 End Class
