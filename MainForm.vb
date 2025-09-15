@@ -7,9 +7,16 @@ Public Class MainForm
         LoadDB()
         confirmButton.Visible = False
         ExButtonDeleteMode.Visible = False
+        reminderView.SelectionMode = DataGridViewSelectionMode.FullRowSelect
     End Sub
 
     Private Sub NewReminderButton_Click(sender As Object, e As EventArgs) Handles newReminderButton.Click
+        AddWindow.ShowDialog()
+    End Sub
+    Private Sub NewReminderToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles NewReminderToolStripMenuItem.Click
+        AddWindow.ShowDialog()
+    End Sub
+    Private Sub NewReminderToolStripMenuItem1_Click(sender As Object, e As EventArgs) Handles NewReminderToolStripMenuItem1.Click
         AddWindow.ShowDialog()
     End Sub
 
@@ -24,9 +31,7 @@ Public Class MainForm
     End Sub
 
     Private Sub confirmButton_Click(sender As Object, e As EventArgs) Handles confirmButton.Click
-
         deleteReminder()
-
     End Sub
 
     Private Sub ExButtonDeleteMode_Click(sender As Object, e As EventArgs) Handles ExButtonDeleteMode.Click
@@ -55,10 +60,15 @@ Public Class MainForm
     Private Sub deleteReminder()
 
         For Each row As DataGridViewRow In reminderView.SelectedRows
-            Dim idToDelete As Integer = Convert.ToInt32(row.Cells("ID").Value)
-            ReminderController.DeleteReminder(idToDelete)
+            Try
+                Dim idToDelete As Integer = Convert.ToInt32(row.Cells("ID").Value)
+                ReminderController.DeleteReminder(idToDelete)
 
-            reminderView.Rows.Remove(row)
+                reminderView.Rows.Remove(row)
+            Catch ex As Exception
+                MessageBox.Show("cant delete empty row")
+            End Try
+
         Next
 
         confirmButton.Visible = False
@@ -66,4 +76,19 @@ Public Class MainForm
 
     End Sub
 
+    Private Sub ToolStripLabel3_Click(sender As Object, e As EventArgs) Handles EditReminder_btn.Click
+        ReminderController.UpdateClick()
+    End Sub
+
+    Private Sub EditReminderToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles EditReminderToolStripMenuItem.Click
+        ReminderController.UpdateClick()
+    End Sub
+
+    Private Sub ExitToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ExitToolStripMenuItem.Click
+        Me.Close()
+    End Sub
+
+    Private Sub ToolStripLabel5_Click(sender As Object, e As EventArgs) Handles ToolStripLabel5.Click
+        ReminderController.MarkDoneClick()
+    End Sub
 End Class

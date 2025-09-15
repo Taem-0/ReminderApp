@@ -73,10 +73,30 @@ Public Class LoginForm
             Register_confirmpass.UseSystemPasswordChar = True
         End If
     End Sub
-
+    Private Function IsUsernameTaken(username As String) As Boolean
+        Dim result As Boolean = False
+        Try
+            Using cmd As New OleDbCommand("SELECT * FROM Accounts WHERE UCase(Username) = UCase(?)", Conn)
+                cmd.Parameters.AddWithValue("@Username", username)
+                Conn.Open()
+                Using reader As OleDbDataReader = cmd.ExecuteReader()
+                    If reader.HasRows Then
+                        result = True
+                    End If
+                End Using
+                Conn.Close()
+            End Using
+        Catch ex As Exception
+            MessageBox.Show("Error: " & ex.Message)
+            If Conn.State = ConnectionState.Open Then
+                Conn.Close()
+            End If
+        End Try
+        Return result
+    End Function
     Private Sub Register_btnRegister_Click(sender As Object, e As EventArgs) Handles Register_btnRegister.Click
 
-        If Register_username.Text.Length < 3 Then
+        If Register_username.Text.Trim.Length < 3 Then
             MessageBox.Show("Username must be at least 3 characters long.", "Username Too Short!", MessageBoxButtons.OK, MessageBoxIcon.Warning)
             Register_username.Focus()
             Return
@@ -94,10 +114,16 @@ Public Class LoginForm
             Return
         End If
 
+        If IsUsernameTaken(Register_username.Text.Trim) Then
+            MessageBox.Show("Username is already taken.", "Username Taken!", MessageBoxButtons.OK, MessageBoxIcon.Warning)
+            Register_username.Focus()
+            Return
+        End If
+
         Try
             Using cmd As New OleDbCommand("INSERT INTO Accounts ([USERNAME], [PASSWORD]) VALUES (@Username, @Password)", Conn)
 
-                cmd.Parameters.AddWithValue("@Username", Register_username.Text)
+                cmd.Parameters.AddWithValue("@Username", Register_username.Text.Trim)
                 cmd.Parameters.AddWithValue("@Password", Register_password.Text)
 
                 Conn.Open()
@@ -142,6 +168,7 @@ Public Class LoginForm
         Return result
     End Function
 
+
     Private Sub LOGIN_PANEL_Paint(sender As Object, e As PaintEventArgs) Handles LOGIN_PANEL.Paint
 
     End Sub
@@ -153,7 +180,7 @@ Public Class LoginForm
 
     Private Sub Login_btn_Click(sender As Object, e As EventArgs) Handles Login_btn.Click
 
-        If Login_username.Text = "admin" And Login_password.Text = "admin" Then
+        If Login_username.Text.Trim = "admin" And Login_password.Text = "admin" Then
             MessageBox.Show("Login Successful!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information)
             current_username = Login_username.Text
             Me.Hide()
@@ -162,7 +189,7 @@ Public Class LoginForm
             Login_username.Text = ""
             Login_password.Text = ""
             Login_username.Focus()
-        ElseIf CheckCredentials(Login_username.Text, Login_password.Text) Then
+        ElseIf CheckCredentials(Login_username.Text.Trim, Login_password.Text) Then
             MessageBox.Show("Login Successful!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information)
             current_username = Login_username.Text
             Me.Hide()
