@@ -1,4 +1,5 @@
 ﻿Imports System.Data.OleDb
+Imports System.Security.Cryptography
 
 Public Class ReminderController
 
@@ -17,6 +18,23 @@ Public Class ReminderController
 
                 cmd.ExecuteNonQuery()
             End Using
+
+            connection.Close()
+
+        End Using
+    End Sub
+
+    Public Shared Sub DeleteReminder(idToDelete As Integer)
+        Using connection As New OleDbConnection(connectionString)
+            connection.Open()
+
+            Using cmd As New OleDbCommand("DELETE FROM Reminders WHERE ID = ?", connection)
+                cmd.Parameters.Add("@id", OleDbType.Integer).Value = idToDelete
+
+                cmd.ExecuteNonQuery()
+            End Using
+
+            connection.Close()
         End Using
     End Sub
 

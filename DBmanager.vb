@@ -4,7 +4,7 @@ Public Class DBmanager
     Private ReadOnly connectionString As String = "Provider=Microsoft.ACE.OLEDB.12.0;Data Source=..\..\..\ms_access_stuff\reminderAppDB.accdb;"
 
     Public Function LoadDBdata(username As String) As DataTable
-        Dim query As String = "SELECT Reminder, Description, Deadline, Done FROM Reminders WHERE username = ?"
+        Dim query As String = "SELECT ID, Reminder, Description, Deadline, Done FROM Reminders WHERE username = ?"
         Dim data As New DataTable()
 
         Using connection As New OleDbConnection(connectionString)
