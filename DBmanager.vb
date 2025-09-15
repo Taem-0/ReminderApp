@@ -7,14 +7,21 @@ Public Class DBmanager
         Dim query As String = "SELECT ID, Reminder, Description, Deadline, Done FROM Reminders WHERE username = ?"
         Dim data As New DataTable()
 
-        Using connection As New OleDbConnection(connectionString)
-            Using cmd As New OleDbCommand(query, connection)
-                cmd.Parameters.Add("@username", OleDbType.VarWChar).Value = username
-                Using adapter As New OleDbDataAdapter(cmd)
-                    adapter.Fill(data)
+        Try
+
+            Using connection As New OleDbConnection(connectionString)
+                Using cmd As New OleDbCommand(query, connection)
+                    cmd.Parameters.Add("@username", OleDbType.VarWChar).Value = username
+                    Using adapter As New OleDbDataAdapter(cmd)
+                        adapter.Fill(data)
+                    End Using
                 End Using
+                connection.Close()
             End Using
-        End Using
+
+        Catch ex As Exception
+
+        End Try
 
 
         Return data
