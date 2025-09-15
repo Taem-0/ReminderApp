@@ -1,5 +1,5 @@
 ﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
-Partial Class Form2
+Partial Class LoginForm
     Inherits System.Windows.Forms.Form
 
     'Form overrides dispose to clean up the component list.
@@ -69,7 +69,7 @@ Partial Class Form2
         Register_username.Location = New Point(209, 97)
         Register_username.Name = "Register_username"
         Register_username.Size = New Size(286, 27)
-        Register_username.TabIndex = 2
+        Register_username.TabIndex = 6
         ' 
         ' lblPassword
         ' 
@@ -87,7 +87,7 @@ Partial Class Form2
         Register_password.Location = New Point(211, 147)
         Register_password.Name = "Register_password"
         Register_password.Size = New Size(284, 27)
-        Register_password.TabIndex = 4
+        Register_password.TabIndex = 7
         ' 
         ' Register_btnRegister
         ' 
@@ -96,7 +96,7 @@ Partial Class Form2
         Register_btnRegister.Location = New Point(211, 293)
         Register_btnRegister.Name = "Register_btnRegister"
         Register_btnRegister.Size = New Size(119, 35)
-        Register_btnRegister.TabIndex = 7
+        Register_btnRegister.TabIndex = 10
         Register_btnRegister.Text = "Register"
         Register_btnRegister.UseVisualStyleBackColor = False
         ' 
@@ -107,7 +107,7 @@ Partial Class Form2
         Register_btnCancel.Location = New Point(376, 293)
         Register_btnCancel.Name = "Register_btnCancel"
         Register_btnCancel.Size = New Size(119, 35)
-        Register_btnCancel.TabIndex = 8
+        Register_btnCancel.TabIndex = 11
         Register_btnCancel.Text = "Cancel"
         Register_btnCancel.UseVisualStyleBackColor = False
         ' 
@@ -134,7 +134,7 @@ Partial Class Form2
         Register_showpass.Location = New Point(209, 230)
         Register_showpass.Name = "Register_showpass"
         Register_showpass.Size = New Size(134, 24)
-        Register_showpass.TabIndex = 11
+        Register_showpass.TabIndex = 9
         Register_showpass.Text = "Show password"
         Register_showpass.UseVisualStyleBackColor = True
         ' 
@@ -154,7 +154,7 @@ Partial Class Form2
         Register_confirmpass.Location = New Point(211, 196)
         Register_confirmpass.Name = "Register_confirmpass"
         Register_confirmpass.Size = New Size(284, 27)
-        Register_confirmpass.TabIndex = 10
+        Register_confirmpass.TabIndex = 8
         ' 
         ' LOGIN_PANEL
         ' 
@@ -177,7 +177,7 @@ Partial Class Form2
         Login_showpass.Location = New Point(209, 180)
         Login_showpass.Name = "Login_showpass"
         Login_showpass.Size = New Size(134, 24)
-        Login_showpass.TabIndex = 10
+        Login_showpass.TabIndex = 3
         Login_showpass.Text = "Show password"
         Login_showpass.UseVisualStyleBackColor = True
         ' 
@@ -190,7 +190,7 @@ Partial Class Form2
         LinkLabel1.Location = New Point(161, 277)
         LinkLabel1.Name = "LinkLabel1"
         LinkLabel1.Size = New Size(334, 25)
-        LinkLabel1.TabIndex = 9
+        LinkLabel1.TabIndex = 5
         LinkLabel1.TabStop = True
         LinkLabel1.Text = "Don't have an Account yet? Click here!"
         ' 
@@ -223,7 +223,7 @@ Partial Class Form2
         Login_btn.Location = New Point(279, 226)
         Login_btn.Name = "Login_btn"
         Login_btn.Size = New Size(119, 35)
-        Login_btn.TabIndex = 7
+        Login_btn.TabIndex = 4
         Login_btn.Text = "Login"
         Login_btn.UseVisualStyleBackColor = False
         ' 
@@ -232,7 +232,7 @@ Partial Class Form2
         Login_username.Location = New Point(209, 97)
         Login_username.Name = "Login_username"
         Login_username.Size = New Size(286, 27)
-        Login_username.TabIndex = 2
+        Login_username.TabIndex = 1
         ' 
         ' Label3
         ' 
@@ -250,16 +250,16 @@ Partial Class Form2
         Login_password.Location = New Point(211, 147)
         Login_password.Name = "Login_password"
         Login_password.Size = New Size(284, 27)
-        Login_password.TabIndex = 4
+        Login_password.TabIndex = 2
         ' 
-        ' Form2
+        ' LoginForm
         ' 
         AutoScaleMode = AutoScaleMode.None
         BackColor = SystemColors.ButtonFace
-        ClientSize = New Size(661, 545)
+        ClientSize = New Size(613, 545)
         Controls.Add(LOGIN_PANEL)
         Controls.Add(REGISTER_PANEL)
-        Name = "Form2"
+        Name = "LoginForm"
         Text = "Registration Form"
         REGISTER_PANEL.ResumeLayout(False)
         REGISTER_PANEL.PerformLayout()

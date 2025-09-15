@@ -1,6 +1,6 @@
 ﻿Imports System.Data.OleDb
 
-Public Class Form2
+Public Class LoginForm
     Private Enum PanelType
         LOGIN
         REGISTER
@@ -8,12 +8,14 @@ Public Class Form2
 
     Public current_username As String
 
-    Dim Conn_String As String = "Provider=Microsoft.ACE.OLEDB.12.0;Data Source=..\..\..\ms_access_stuff\Database1.accdb;"
+    Dim Conn_String As String = "Provider=Microsoft.ACE.OLEDB.12.0;Data Source=..\..\..\ms_access_stuff\reminderAppDB.accdb;"
     Dim Conn As New OleDbConnection(Conn_String)
 
     Private Sub Form2_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         CenterPanel()
         Login_password.UseSystemPasswordChar = True
+        Register_password.UseSystemPasswordChar = True
+        Register_confirmpass.UseSystemPasswordChar = True
     End Sub
 
     Private Sub Form1_Resize(sender As Object, e As EventArgs) Handles MyBase.Resize
@@ -57,24 +59,6 @@ Public Class Form2
 
 
     'REGISTER_PANEL stuff
-    Private Sub REGISTER_PANEL_Paint(sender As Object, e As PaintEventArgs) Handles REGISTER_PANEL.Paint
-
-    End Sub
-    Private Sub Register_username_TextChanged(sender As Object, e As EventArgs) Handles Register_username.TextChanged
-
-    End Sub
-
-    Private Sub Register_password_TextChanged(sender As Object, e As EventArgs) Handles Register_password.TextChanged
-
-    End Sub
-
-    Private Sub Register_confirmpass_TextChanged(sender As Object, e As EventArgs) Handles Register_confirmpass.TextChanged
-
-    End Sub
-
-    Private Sub Register_email_TextChanged(sender As Object, e As EventArgs)
-
-    End Sub
 
     Private Sub Register_btnCancel_Click(sender As Object, e As EventArgs) Handles Register_btnCancel.Click
         Show_panel(PanelType.LOGIN)
@@ -111,7 +95,7 @@ Public Class Form2
         End If
 
         Try
-            Using cmd As New OleDbCommand("INSERT INTO Accounts ([USERNAME], [PASSWORD], [EMAIL]) VALUES (@Username, @Password, @Email)", Conn)
+            Using cmd As New OleDbCommand("INSERT INTO Accounts ([USERNAME], [PASSWORD]) VALUES (@Username, @Password)", Conn)
 
                 cmd.Parameters.AddWithValue("@Username", Register_username.Text)
                 cmd.Parameters.AddWithValue("@Password", Register_password.Text)
