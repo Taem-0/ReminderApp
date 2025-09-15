@@ -182,7 +182,7 @@ Public Class LoginForm
 
         If Login_username.Text.Trim = "admin" And Login_password.Text = "admin" Then
             MessageBox.Show("Login Successful!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information)
-            current_username = Login_username.Text
+            current_username = Login_username.Text.Trim
             Me.Hide()
             MainForm.ShowDialog()
             Me.Show()
@@ -191,7 +191,7 @@ Public Class LoginForm
             Login_username.Focus()
         ElseIf CheckCredentials(Login_username.Text.Trim, Login_password.Text) Then
             MessageBox.Show("Login Successful!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information)
-            current_username = Login_username.Text
+            current_username = Login_username.Text.Trim
             Me.Hide()
             MainForm.ShowDialog()
             Me.Show()
