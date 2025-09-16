@@ -49,7 +49,7 @@ Partial Class LoginForm
         lblTitle.ForeColor = SystemColors.ActiveCaptionText
         lblTitle.Location = New Point(190, 27)
         lblTitle.Name = "lblTitle"
-        lblTitle.Size = New Size(305, 40)
+        lblTitle.Size = New Size(240, 31)
         lblTitle.TabIndex = 0
         lblTitle.Text = "Account Registration"
         ' 
@@ -60,7 +60,7 @@ Partial Class LoginForm
         lblUsername.ForeColor = SystemColors.ActiveCaptionText
         lblUsername.Location = New Point(83, 97)
         lblUsername.Name = "lblUsername"
-        lblUsername.Size = New Size(122, 31)
+        lblUsername.Size = New Size(101, 25)
         lblUsername.TabIndex = 1
         lblUsername.Text = "Username:"
         ' 
@@ -68,7 +68,7 @@ Partial Class LoginForm
         ' 
         Register_username.Location = New Point(209, 97)
         Register_username.Name = "Register_username"
-        Register_username.Size = New Size(286, 27)
+        Register_username.Size = New Size(286, 23)
         Register_username.TabIndex = 6
         ' 
         ' lblPassword
@@ -78,7 +78,7 @@ Partial Class LoginForm
         lblPassword.ForeColor = SystemColors.ActiveCaptionText
         lblPassword.Location = New Point(90, 147)
         lblPassword.Name = "lblPassword"
-        lblPassword.Size = New Size(115, 31)
+        lblPassword.Size = New Size(95, 25)
         lblPassword.TabIndex = 3
         lblPassword.Text = "Password:"
         ' 
@@ -86,14 +86,14 @@ Partial Class LoginForm
         ' 
         Register_password.Location = New Point(211, 147)
         Register_password.Name = "Register_password"
-        Register_password.Size = New Size(284, 27)
+        Register_password.Size = New Size(284, 23)
         Register_password.TabIndex = 7
         ' 
         ' Register_btnRegister
         ' 
         Register_btnRegister.BackColor = SystemColors.GradientActiveCaption
         Register_btnRegister.Font = New Font("Segoe UI Semibold", 10.8F, FontStyle.Bold)
-        Register_btnRegister.Location = New Point(211, 293)
+        Register_btnRegister.Location = New Point(293, 293)
         Register_btnRegister.Name = "Register_btnRegister"
         Register_btnRegister.Size = New Size(119, 35)
         Register_btnRegister.TabIndex = 10
@@ -104,7 +104,7 @@ Partial Class LoginForm
         ' 
         Register_btnCancel.BackColor = SystemColors.GradientActiveCaption
         Register_btnCancel.Font = New Font("Segoe UI Semibold", 10.8F, FontStyle.Bold)
-        Register_btnCancel.Location = New Point(376, 293)
+        Register_btnCancel.Location = New Point(418, 293)
         Register_btnCancel.Name = "Register_btnCancel"
         Register_btnCancel.Size = New Size(119, 35)
         Register_btnCancel.TabIndex = 11
@@ -133,7 +133,7 @@ Partial Class LoginForm
         Register_showpass.AutoSize = True
         Register_showpass.Location = New Point(209, 230)
         Register_showpass.Name = "Register_showpass"
-        Register_showpass.Size = New Size(134, 24)
+        Register_showpass.Size = New Size(108, 19)
         Register_showpass.TabIndex = 9
         Register_showpass.Text = "Show password"
         Register_showpass.UseVisualStyleBackColor = True
@@ -145,7 +145,7 @@ Partial Class LoginForm
         Label5.ForeColor = SystemColors.ActiveCaptionText
         Label5.Location = New Point(8, 196)
         Label5.Name = "Label5"
-        Label5.Size = New Size(202, 31)
+        Label5.Size = New Size(168, 25)
         Label5.TabIndex = 9
         Label5.Text = "Confirm Password:"
         ' 
@@ -153,7 +153,7 @@ Partial Class LoginForm
         ' 
         Register_confirmpass.Location = New Point(211, 196)
         Register_confirmpass.Name = "Register_confirmpass"
-        Register_confirmpass.Size = New Size(284, 27)
+        Register_confirmpass.Size = New Size(284, 23)
         Register_confirmpass.TabIndex = 8
         ' 
         ' LOGIN_PANEL
@@ -166,7 +166,7 @@ Partial Class LoginForm
         LOGIN_PANEL.Controls.Add(Login_username)
         LOGIN_PANEL.Controls.Add(Label3)
         LOGIN_PANEL.Controls.Add(Login_password)
-        LOGIN_PANEL.Location = New Point(582, 12)
+        LOGIN_PANEL.Location = New Point(591, 12)
         LOGIN_PANEL.Name = "LOGIN_PANEL"
         LOGIN_PANEL.Size = New Size(564, 331)
         LOGIN_PANEL.TabIndex = 10
@@ -176,7 +176,7 @@ Partial Class LoginForm
         Login_showpass.AutoSize = True
         Login_showpass.Location = New Point(209, 180)
         Login_showpass.Name = "Login_showpass"
-        Login_showpass.Size = New Size(134, 24)
+        Login_showpass.Size = New Size(108, 19)
         Login_showpass.TabIndex = 3
         Login_showpass.Text = "Show password"
         Login_showpass.UseVisualStyleBackColor = True
@@ -185,11 +185,11 @@ Partial Class LoginForm
         ' 
         LinkLabel1.ActiveLinkColor = Color.Orchid
         LinkLabel1.AutoSize = True
-        LinkLabel1.Font = New Font("Segoe UI", 11F)
+        LinkLabel1.Font = New Font("Segoe UI", 11.0F)
         LinkLabel1.LinkColor = Color.Blue
         LinkLabel1.Location = New Point(161, 277)
         LinkLabel1.Name = "LinkLabel1"
-        LinkLabel1.Size = New Size(334, 25)
+        LinkLabel1.Size = New Size(261, 20)
         LinkLabel1.TabIndex = 5
         LinkLabel1.TabStop = True
         LinkLabel1.Text = "Don't have an Account yet? Click here!"
@@ -201,7 +201,7 @@ Partial Class LoginForm
         Label1.ForeColor = SystemColors.ActiveCaptionText
         Label1.Location = New Point(259, 18)
         Label1.Name = "Label1"
-        Label1.Size = New Size(94, 40)
+        Label1.Size = New Size(75, 31)
         Label1.TabIndex = 0
         Label1.Text = "Login"
         ' 
@@ -212,7 +212,7 @@ Partial Class LoginForm
         Label2.ForeColor = SystemColors.ActiveCaptionText
         Label2.Location = New Point(83, 97)
         Label2.Name = "Label2"
-        Label2.Size = New Size(122, 31)
+        Label2.Size = New Size(101, 25)
         Label2.TabIndex = 1
         Label2.Text = "Username:"
         ' 
@@ -220,7 +220,7 @@ Partial Class LoginForm
         ' 
         Login_btn.BackColor = SystemColors.GradientActiveCaption
         Login_btn.Font = New Font("Segoe UI Semibold", 10.8F, FontStyle.Bold)
-        Login_btn.Location = New Point(279, 226)
+        Login_btn.Location = New Point(235, 239)
         Login_btn.Name = "Login_btn"
         Login_btn.Size = New Size(119, 35)
         Login_btn.TabIndex = 4
@@ -231,7 +231,7 @@ Partial Class LoginForm
         ' 
         Login_username.Location = New Point(209, 97)
         Login_username.Name = "Login_username"
-        Login_username.Size = New Size(286, 27)
+        Login_username.Size = New Size(286, 23)
         Login_username.TabIndex = 1
         ' 
         ' Label3
@@ -241,7 +241,7 @@ Partial Class LoginForm
         Label3.ForeColor = SystemColors.ActiveCaptionText
         Label3.Location = New Point(90, 147)
         Label3.Name = "Label3"
-        Label3.Size = New Size(115, 31)
+        Label3.Size = New Size(95, 25)
         Label3.TabIndex = 3
         Label3.Text = "Password:"
         ' 
@@ -249,7 +249,7 @@ Partial Class LoginForm
         ' 
         Login_password.Location = New Point(211, 147)
         Login_password.Name = "Login_password"
-        Login_password.Size = New Size(284, 27)
+        Login_password.Size = New Size(284, 23)
         Login_password.TabIndex = 2
         ' 
         ' LoginForm

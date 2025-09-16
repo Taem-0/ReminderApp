@@ -27,5 +27,11 @@
 
     End Sub
 
+    Private Sub AddWindow_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        ReminderDatePicker.Format = DateTimePickerFormat.Custom
+        ReminderDatePicker.CustomFormat = "MM/dd/yyyy hh:mm tt"
+        ReminderDatePicker.ShowUpDown = False
+    End Sub
+
 
 End Class

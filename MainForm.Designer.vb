@@ -22,6 +22,7 @@ Partial Class MainForm
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(MainForm))
         MenuStrip1 = New MenuStrip()
         FileToolStripMenuItem = New ToolStripMenuItem()
         NewReminderToolStripMenuItem = New ToolStripMenuItem()
@@ -30,21 +31,20 @@ Partial Class MainForm
         NewReminderToolStripMenuItem1 = New ToolStripMenuItem()
         EditReminderToolStripMenuItem = New ToolStripMenuItem()
         DeleteReminderToolStripMenuItem = New ToolStripMenuItem()
-        MarkAsDoneToolStripMenuItem = New ToolStripMenuItem()
         ViewToolStripMenuItem = New ToolStripMenuItem()
-        ShowAllToolStripMenuItem = New ToolStripMenuItem()
-        ShowTodayToolStripMenuItem = New ToolStripMenuItem()
-        ShowUpcomingToolStripMenuItem = New ToolStripMenuItem()
-        ShowCompletedToolStripMenuItem = New ToolStripMenuItem()
+        ShowAllSort = New ToolStripMenuItem()
+        ShowTodaySort = New ToolStripMenuItem()
+        ShowUpcomingSort = New ToolStripMenuItem()
+        ShowCompletedSort = New ToolStripMenuItem()
         SortByToolStripMenuItem = New ToolStripMenuItem()
-        TitleToolStripMenuItem = New ToolStripMenuItem()
-        DateToolStripMenuItem = New ToolStripMenuItem()
-        DueDateToolStripMenuItem = New ToolStripMenuItem()
-        Panel1 = New Panel()
+        SortByReminder = New ToolStripMenuItem()
+        SortByDateMan = New ToolStripMenuItem()
+        SortByStatus = New ToolStripMenuItem()
+        TitleCard = New Panel()
+        TextBox1 = New TextBox()
         ToolStrip1 = New ToolStrip()
         newReminderButton = New ToolStripLabel()
         ToolStripLabel2 = New ToolStripLabel()
-        EditReminder_btn = New ToolStripLabel()
         deleteReminderButton = New ToolStripLabel()
         ToolStripLabel5 = New ToolStripLabel()
         reminderView = New DataGridView()
@@ -53,6 +53,7 @@ Partial Class MainForm
         ExButtonDeleteMode = New Button()
         Panel2 = New Panel()
         MenuStrip1.SuspendLayout()
+        TitleCard.SuspendLayout()
         ToolStrip1.SuspendLayout()
         CType(reminderView, ComponentModel.ISupportInitialize).BeginInit()
         Panel2.SuspendLayout()
@@ -64,8 +65,7 @@ Partial Class MainForm
         MenuStrip1.Items.AddRange(New ToolStripItem() {FileToolStripMenuItem, EditToolStripMenuItem, ViewToolStripMenuItem})
         MenuStrip1.Location = New Point(0, 0)
         MenuStrip1.Name = "MenuStrip1"
-        MenuStrip1.Padding = New Padding(7, 3, 0, 3)
-        MenuStrip1.Size = New Size(412, 30)
+        MenuStrip1.Size = New Size(360, 24)
         MenuStrip1.TabIndex = 0
         MenuStrip1.Text = "MenuStrip1"
         ' 
@@ -73,131 +73,142 @@ Partial Class MainForm
         ' 
         FileToolStripMenuItem.DropDownItems.AddRange(New ToolStripItem() {NewReminderToolStripMenuItem, ExitToolStripMenuItem})
         FileToolStripMenuItem.Name = "FileToolStripMenuItem"
-        FileToolStripMenuItem.Size = New Size(46, 24)
+        FileToolStripMenuItem.Size = New Size(37, 20)
         FileToolStripMenuItem.Text = "File"
         ' 
         ' NewReminderToolStripMenuItem
         ' 
         NewReminderToolStripMenuItem.Name = "NewReminderToolStripMenuItem"
-        NewReminderToolStripMenuItem.Size = New Size(224, 26)
+        NewReminderToolStripMenuItem.Size = New Size(149, 22)
         NewReminderToolStripMenuItem.Text = "New reminder"
         ' 
         ' ExitToolStripMenuItem
         ' 
         ExitToolStripMenuItem.Name = "ExitToolStripMenuItem"
-        ExitToolStripMenuItem.Size = New Size(224, 26)
+        ExitToolStripMenuItem.Size = New Size(149, 22)
         ExitToolStripMenuItem.Text = "Exit"
         ' 
         ' EditToolStripMenuItem
         ' 
-        EditToolStripMenuItem.DropDownItems.AddRange(New ToolStripItem() {NewReminderToolStripMenuItem1, EditReminderToolStripMenuItem, DeleteReminderToolStripMenuItem, MarkAsDoneToolStripMenuItem})
+        EditToolStripMenuItem.DropDownItems.AddRange(New ToolStripItem() {NewReminderToolStripMenuItem1, EditReminderToolStripMenuItem, DeleteReminderToolStripMenuItem})
         EditToolStripMenuItem.Name = "EditToolStripMenuItem"
-        EditToolStripMenuItem.Size = New Size(49, 24)
+        EditToolStripMenuItem.Size = New Size(39, 20)
         EditToolStripMenuItem.Text = "Edit"
         ' 
         ' NewReminderToolStripMenuItem1
         ' 
         NewReminderToolStripMenuItem1.Name = "NewReminderToolStripMenuItem1"
-        NewReminderToolStripMenuItem1.Size = New Size(224, 26)
+        NewReminderToolStripMenuItem1.Size = New Size(158, 22)
         NewReminderToolStripMenuItem1.Text = "New reminder"
         ' 
         ' EditReminderToolStripMenuItem
         ' 
         EditReminderToolStripMenuItem.Name = "EditReminderToolStripMenuItem"
-        EditReminderToolStripMenuItem.Size = New Size(224, 26)
+        EditReminderToolStripMenuItem.Size = New Size(158, 22)
         EditReminderToolStripMenuItem.Text = "Edit reminder"
         ' 
         ' DeleteReminderToolStripMenuItem
         ' 
         DeleteReminderToolStripMenuItem.Name = "DeleteReminderToolStripMenuItem"
-        DeleteReminderToolStripMenuItem.Size = New Size(224, 26)
+        DeleteReminderToolStripMenuItem.Size = New Size(158, 22)
         DeleteReminderToolStripMenuItem.Text = "Delete reminder"
-        ' 
-        ' MarkAsDoneToolStripMenuItem
-        ' 
-        MarkAsDoneToolStripMenuItem.Name = "MarkAsDoneToolStripMenuItem"
-        MarkAsDoneToolStripMenuItem.Size = New Size(224, 26)
-        MarkAsDoneToolStripMenuItem.Text = "Mark as done"
         ' 
         ' ViewToolStripMenuItem
         ' 
-        ViewToolStripMenuItem.DropDownItems.AddRange(New ToolStripItem() {ShowAllToolStripMenuItem, ShowTodayToolStripMenuItem, ShowUpcomingToolStripMenuItem, ShowCompletedToolStripMenuItem, SortByToolStripMenuItem})
+        ViewToolStripMenuItem.DropDownItems.AddRange(New ToolStripItem() {ShowAllSort, ShowTodaySort, ShowUpcomingSort, ShowCompletedSort, SortByToolStripMenuItem})
         ViewToolStripMenuItem.Name = "ViewToolStripMenuItem"
-        ViewToolStripMenuItem.Size = New Size(55, 24)
+        ViewToolStripMenuItem.Size = New Size(44, 20)
         ViewToolStripMenuItem.Text = "View"
         ' 
-        ' ShowAllToolStripMenuItem
+        ' ShowAllSort
         ' 
-        ShowAllToolStripMenuItem.Name = "ShowAllToolStripMenuItem"
-        ShowAllToolStripMenuItem.Size = New Size(204, 26)
-        ShowAllToolStripMenuItem.Text = "Show all"
+        ShowAllSort.Name = "ShowAllSort"
+        ShowAllSort.Size = New Size(180, 22)
+        ShowAllSort.Text = "Show all"
         ' 
-        ' ShowTodayToolStripMenuItem
+        ' ShowTodaySort
         ' 
-        ShowTodayToolStripMenuItem.Name = "ShowTodayToolStripMenuItem"
-        ShowTodayToolStripMenuItem.Size = New Size(204, 26)
-        ShowTodayToolStripMenuItem.Text = "Show today"
+        ShowTodaySort.Name = "ShowTodaySort"
+        ShowTodaySort.Size = New Size(180, 22)
+        ShowTodaySort.Text = "Show today"
         ' 
-        ' ShowUpcomingToolStripMenuItem
+        ' ShowUpcomingSort
         ' 
-        ShowUpcomingToolStripMenuItem.Name = "ShowUpcomingToolStripMenuItem"
-        ShowUpcomingToolStripMenuItem.Size = New Size(204, 26)
-        ShowUpcomingToolStripMenuItem.Text = "Show upcoming"
+        ShowUpcomingSort.Name = "ShowUpcomingSort"
+        ShowUpcomingSort.Size = New Size(180, 22)
+        ShowUpcomingSort.Text = "Show upcoming"
         ' 
-        ' ShowCompletedToolStripMenuItem
+        ' ShowCompletedSort
         ' 
-        ShowCompletedToolStripMenuItem.Name = "ShowCompletedToolStripMenuItem"
-        ShowCompletedToolStripMenuItem.Size = New Size(204, 26)
-        ShowCompletedToolStripMenuItem.Text = "Show completed"
+        ShowCompletedSort.Name = "ShowCompletedSort"
+        ShowCompletedSort.Size = New Size(180, 22)
+        ShowCompletedSort.Text = "Show completed"
         ' 
         ' SortByToolStripMenuItem
         ' 
-        SortByToolStripMenuItem.DropDownItems.AddRange(New ToolStripItem() {TitleToolStripMenuItem, DateToolStripMenuItem, DueDateToolStripMenuItem})
+        SortByToolStripMenuItem.DropDownItems.AddRange(New ToolStripItem() {SortByReminder, SortByDateMan, SortByStatus})
         SortByToolStripMenuItem.Name = "SortByToolStripMenuItem"
-        SortByToolStripMenuItem.Size = New Size(204, 26)
+        SortByToolStripMenuItem.Size = New Size(180, 22)
         SortByToolStripMenuItem.Text = "Sort by"
         ' 
-        ' TitleToolStripMenuItem
+        ' SortByReminder
         ' 
-        TitleToolStripMenuItem.Name = "TitleToolStripMenuItem"
-        TitleToolStripMenuItem.Size = New Size(153, 26)
-        TitleToolStripMenuItem.Text = "Title"
+        SortByReminder.Name = "SortByReminder"
+        SortByReminder.Size = New Size(125, 22)
+        SortByReminder.Text = "Reminder"
         ' 
-        ' DateToolStripMenuItem
+        ' SortByDateMan
         ' 
-        DateToolStripMenuItem.Name = "DateToolStripMenuItem"
-        DateToolStripMenuItem.Size = New Size(153, 26)
-        DateToolStripMenuItem.Text = "Due date"
+        SortByDateMan.Name = "SortByDateMan"
+        SortByDateMan.Size = New Size(125, 22)
+        SortByDateMan.Text = "Due date"
         ' 
-        ' DueDateToolStripMenuItem
+        ' SortByStatus
         ' 
-        DueDateToolStripMenuItem.Name = "DueDateToolStripMenuItem"
-        DueDateToolStripMenuItem.Size = New Size(153, 26)
-        DueDateToolStripMenuItem.Text = "Status"
+        SortByStatus.Name = "SortByStatus"
+        SortByStatus.Size = New Size(125, 22)
+        SortByStatus.Text = "Status"
         ' 
-        ' Panel1
+        ' TitleCard
         ' 
-        Panel1.Location = New Point(0, 36)
-        Panel1.Margin = New Padding(3, 4, 3, 4)
-        Panel1.Name = "Panel1"
-        Panel1.Size = New Size(410, 105)
-        Panel1.TabIndex = 1
+        TitleCard.AutoSizeMode = AutoSizeMode.GrowAndShrink
+        TitleCard.Controls.Add(TextBox1)
+        TitleCard.Location = New Point(0, 27)
+        TitleCard.Name = "TitleCard"
+        TitleCard.Size = New Size(359, 79)
+        TitleCard.TabIndex = 1
+        ' 
+        ' TextBox1
+        ' 
+        TextBox1.Anchor = AnchorStyles.None
+        TextBox1.BackColor = SystemColors.Control
+        TextBox1.BorderStyle = BorderStyle.None
+        TextBox1.Font = New Font("Consolas", 8.25F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
+        TextBox1.ForeColor = SystemColors.ControlText
+        TextBox1.Location = New Point(45, 0)
+        TextBox1.Multiline = True
+        TextBox1.Name = "TextBox1"
+        TextBox1.ReadOnly = True
+        TextBox1.Size = New Size(275, 77)
+        TextBox1.TabIndex = 0
+        TextBox1.TabStop = False
+        TextBox1.Text = resources.GetString("TextBox1.Text")
         ' 
         ' ToolStrip1
         ' 
         ToolStrip1.Dock = DockStyle.None
         ToolStrip1.ImageScalingSize = New Size(20, 20)
-        ToolStrip1.Items.AddRange(New ToolStripItem() {newReminderButton, ToolStripLabel2, EditReminder_btn, deleteReminderButton, ToolStripLabel5})
-        ToolStrip1.Location = New Point(0, 145)
+        ToolStrip1.Items.AddRange(New ToolStripItem() {newReminderButton, ToolStripLabel2, deleteReminderButton, ToolStripLabel5})
+        ToolStrip1.Location = New Point(0, 109)
         ToolStrip1.Name = "ToolStrip1"
-        ToolStrip1.Size = New Size(279, 25)
+        ToolStrip1.Size = New Size(162, 25)
         ToolStrip1.TabIndex = 2
         ToolStrip1.Text = "ToolStrip1"
         ' 
         ' newReminderButton
         ' 
         newReminderButton.Name = "newReminderButton"
-        newReminderButton.Size = New Size(39, 22)
+        newReminderButton.Size = New Size(31, 22)
         newReminderButton.Text = "New"
         ' 
         ' ToolStripLabel2
@@ -205,51 +216,45 @@ Partial Class MainForm
         ToolStripLabel2.Name = "ToolStripLabel2"
         ToolStripLabel2.Size = New Size(0, 22)
         ' 
-        ' EditReminder_btn
-        ' 
-        EditReminder_btn.Name = "EditReminder_btn"
-        EditReminder_btn.Size = New Size(35, 22)
-        EditReminder_btn.Text = "Edit"
-        ' 
         ' deleteReminderButton
         ' 
         deleteReminderButton.Name = "deleteReminderButton"
-        deleteReminderButton.Size = New Size(53, 22)
+        deleteReminderButton.Size = New Size(40, 22)
         deleteReminderButton.Text = "Delete"
         ' 
         ' ToolStripLabel5
         ' 
         ToolStripLabel5.Name = "ToolStripLabel5"
-        ToolStripLabel5.Size = New Size(100, 22)
+        ToolStripLabel5.Size = New Size(79, 22)
         ToolStripLabel5.Text = "Mark as Done"
         ' 
         ' reminderView
         ' 
         reminderView.Anchor = AnchorStyles.Top Or AnchorStyles.Bottom Or AnchorStyles.Left Or AnchorStyles.Right
+        reminderView.BackgroundColor = SystemColors.Control
         reminderView.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        reminderView.Location = New Point(0, 183)
-        reminderView.Margin = New Padding(3, 4, 3, 4)
+        reminderView.GridColor = SystemColors.Window
+        reminderView.Location = New Point(0, 137)
         reminderView.Name = "reminderView"
         reminderView.RowHeadersWidth = 51
-        reminderView.Size = New Size(412, 383)
+        reminderView.Size = New Size(360, 287)
         reminderView.TabIndex = 3
         ' 
         ' Label1
         ' 
         Label1.AutoSize = True
-        Label1.Location = New Point(12, 15)
+        Label1.Location = New Point(10, 11)
         Label1.Name = "Label1"
-        Label1.Size = New Size(53, 20)
+        Label1.Size = New Size(41, 15)
         Label1.TabIndex = 4
         Label1.Text = "Label1"
         ' 
         ' confirmButton
         ' 
         confirmButton.Dock = DockStyle.Right
-        confirmButton.Location = New Point(240, 0)
-        confirmButton.Margin = New Padding(3, 4, 3, 4)
+        confirmButton.Location = New Point(210, 0)
         confirmButton.Name = "confirmButton"
-        confirmButton.Size = New Size(86, 40)
+        confirmButton.Size = New Size(75, 30)
         confirmButton.TabIndex = 5
         confirmButton.Text = "Confirm"
         confirmButton.UseVisualStyleBackColor = True
@@ -257,10 +262,9 @@ Partial Class MainForm
         ' ExButtonDeleteMode
         ' 
         ExButtonDeleteMode.Dock = DockStyle.Right
-        ExButtonDeleteMode.Location = New Point(326, 0)
-        ExButtonDeleteMode.Margin = New Padding(3, 4, 3, 4)
+        ExButtonDeleteMode.Location = New Point(285, 0)
         ExButtonDeleteMode.Name = "ExButtonDeleteMode"
-        ExButtonDeleteMode.Size = New Size(86, 40)
+        ExButtonDeleteMode.Size = New Size(75, 30)
         ExButtonDeleteMode.TabIndex = 6
         ExButtonDeleteMode.Text = "Cancel"
         ExButtonDeleteMode.UseVisualStyleBackColor = True
@@ -271,27 +275,30 @@ Partial Class MainForm
         Panel2.Controls.Add(Label1)
         Panel2.Controls.Add(ExButtonDeleteMode)
         Panel2.Dock = DockStyle.Bottom
-        Panel2.Location = New Point(0, 595)
+        Panel2.Location = New Point(0, 446)
+        Panel2.Margin = New Padding(3, 2, 3, 2)
         Panel2.Name = "Panel2"
-        Panel2.Size = New Size(412, 40)
+        Panel2.Size = New Size(360, 30)
         Panel2.TabIndex = 7
         ' 
         ' MainForm
         ' 
-        AutoScaleDimensions = New SizeF(8F, 20F)
+        AutoScaleDimensions = New SizeF(7F, 15F)
         AutoScaleMode = AutoScaleMode.Font
-        ClientSize = New Size(412, 635)
+        ClientSize = New Size(360, 476)
         Controls.Add(Panel2)
         Controls.Add(reminderView)
         Controls.Add(ToolStrip1)
-        Controls.Add(Panel1)
+        Controls.Add(TitleCard)
         Controls.Add(MenuStrip1)
         MainMenuStrip = MenuStrip1
-        Margin = New Padding(3, 4, 3, 4)
         Name = "MainForm"
+        StartPosition = FormStartPosition.CenterScreen
         Text = " "
         MenuStrip1.ResumeLayout(False)
         MenuStrip1.PerformLayout()
+        TitleCard.ResumeLayout(False)
+        TitleCard.PerformLayout()
         ToolStrip1.ResumeLayout(False)
         ToolStrip1.PerformLayout()
         CType(reminderView, ComponentModel.ISupportInitialize).EndInit()
@@ -307,23 +314,17 @@ Partial Class MainForm
     Friend WithEvents ExitToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents EditToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents NewReminderToolStripMenuItem1 As ToolStripMenuItem
-    Friend WithEvents EditReminderToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents DeleteReminderToolStripMenuItem As ToolStripMenuItem
-    Friend WithEvents MarkAsDoneToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents ViewToolStripMenuItem As ToolStripMenuItem
-    Friend WithEvents ShowAllToolStripMenuItem As ToolStripMenuItem
-    Friend WithEvents ShowTodayToolStripMenuItem As ToolStripMenuItem
-    Friend WithEvents ShowUpcomingToolStripMenuItem As ToolStripMenuItem
-    Friend WithEvents ShowCompletedToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents ShowCompletedSort As ToolStripMenuItem
     Friend WithEvents SortByToolStripMenuItem As ToolStripMenuItem
-    Friend WithEvents TitleToolStripMenuItem As ToolStripMenuItem
-    Friend WithEvents DateToolStripMenuItem As ToolStripMenuItem
-    Friend WithEvents DueDateToolStripMenuItem As ToolStripMenuItem
-    Friend WithEvents Panel1 As Panel
+    Friend WithEvents SortByReminder As ToolStripMenuItem
+    Friend WithEvents SortByDateMan As ToolStripMenuItem
+    Friend WithEvents SortByStatus As ToolStripMenuItem
+    Friend WithEvents TitleCard As Panel
     Friend WithEvents ToolStrip1 As ToolStrip
     Friend WithEvents newReminderButton As ToolStripLabel
     Friend WithEvents ToolStripLabel2 As ToolStripLabel
-    Friend WithEvents EditReminder_btn As ToolStripLabel
     Friend WithEvents deleteReminderButton As ToolStripLabel
     Friend WithEvents ToolStripLabel5 As ToolStripLabel
     Friend WithEvents reminderView As DataGridView
@@ -331,5 +332,10 @@ Partial Class MainForm
     Friend WithEvents confirmButton As Button
     Friend WithEvents ExButtonDeleteMode As Button
     Friend WithEvents Panel2 As Panel
+    Friend WithEvents EditReminderToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents TextBox1 As TextBox
+    Friend WithEvents ShowAllSort As ToolStripMenuItem
+    Friend WithEvents ShowTodaySort As ToolStripMenuItem
+    Friend WithEvents ShowUpcomingSort As ToolStripMenuItem
 
 End Class

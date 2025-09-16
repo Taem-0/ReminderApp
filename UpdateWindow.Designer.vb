@@ -36,10 +36,9 @@ Partial Class UpdateWindow
         ' ExButton
         ' 
         ExButton.Font = New Font("MS Gothic", 9F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
-        ExButton.Location = New Point(313, 449)
-        ExButton.Margin = New Padding(3, 4, 3, 4)
+        ExButton.Location = New Point(274, 337)
         ExButton.Name = "ExButton"
-        ExButton.Size = New Size(86, 31)
+        ExButton.Size = New Size(75, 23)
         ExButton.TabIndex = 17
         ExButton.Text = "Cancel"
         ExButton.UseVisualStyleBackColor = True
@@ -47,10 +46,9 @@ Partial Class UpdateWindow
         ' SaveButton
         ' 
         SaveButton.Font = New Font("MS Gothic", 9F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
-        SaveButton.Location = New Point(220, 449)
-        SaveButton.Margin = New Padding(3, 4, 3, 4)
+        SaveButton.Location = New Point(192, 337)
         SaveButton.Name = "SaveButton"
-        SaveButton.Size = New Size(86, 31)
+        SaveButton.Size = New Size(75, 23)
         SaveButton.TabIndex = 16
         SaveButton.Text = "Save"
         SaveButton.UseVisualStyleBackColor = True
@@ -59,22 +57,22 @@ Partial Class UpdateWindow
         ' 
         Label3.AutoSize = True
         Label3.Font = New Font("MS Gothic", 9F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
-        Label3.Location = New Point(17, 70)
-        Label3.Margin = New Padding(5, 0, 5, 0)
+        Label3.Location = New Point(15, 52)
+        Label3.Margin = New Padding(4, 0, 4, 0)
         Label3.Name = "Label3"
-        Label3.Size = New Size(143, 15)
+        Label3.Size = New Size(41, 12)
         Label3.TabIndex = 15
-        Label3.Text = "Edit description:"
+        Label3.Text = "Notes:"
         Label3.TextAlign = ContentAlignment.TopCenter
         ' 
         ' Label2
         ' 
         Label2.AutoSize = True
         Label2.Font = New Font("MS PGothic", 9F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
-        Label2.Location = New Point(17, 377)
-        Label2.Margin = New Padding(5, 0, 5, 0)
+        Label2.Location = New Point(15, 283)
+        Label2.Margin = New Padding(4, 0, 4, 0)
         Label2.Name = "Label2"
-        Label2.Size = New Size(64, 15)
+        Label2.Size = New Size(51, 12)
         Label2.TabIndex = 14
         Label2.Text = "Deadline:"
         Label2.TextAlign = ContentAlignment.TopCenter
@@ -82,28 +80,26 @@ Partial Class UpdateWindow
         ' ReminderDatePicker
         ' 
         ReminderDatePicker.Font = New Font("MS PGothic", 9.75F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
-        ReminderDatePicker.Location = New Point(17, 397)
-        ReminderDatePicker.Margin = New Padding(3, 4, 3, 4)
+        ReminderDatePicker.Location = New Point(15, 298)
         ReminderDatePicker.Name = "ReminderDatePicker"
-        ReminderDatePicker.Size = New Size(251, 24)
+        ReminderDatePicker.Size = New Size(220, 20)
         ReminderDatePicker.TabIndex = 13
         ' 
         ' ToolStrip1
         ' 
         ToolStrip1.Dock = DockStyle.None
         ToolStrip1.ImageScalingSize = New Size(20, 20)
-        ToolStrip1.Location = New Point(17, 99)
+        ToolStrip1.Location = New Point(15, 74)
         ToolStrip1.Name = "ToolStrip1"
-        ToolStrip1.Size = New Size(112, 25)
+        ToolStrip1.Size = New Size(111, 25)
         ToolStrip1.TabIndex = 12
         ToolStrip1.Text = "ToolStrip1"
         ' 
         ' ReminderDescBox
         ' 
-        ReminderDescBox.Location = New Point(16, 137)
-        ReminderDescBox.Margin = New Padding(3, 4, 3, 4)
+        ReminderDescBox.Location = New Point(14, 103)
         ReminderDescBox.Name = "ReminderDescBox"
-        ReminderDescBox.Size = New Size(382, 221)
+        ReminderDescBox.Size = New Size(335, 167)
         ReminderDescBox.TabIndex = 11
         ReminderDescBox.Text = ""
         ' 
@@ -111,28 +107,28 @@ Partial Class UpdateWindow
         ' 
         Label1.AutoSize = True
         Label1.Font = New Font("MS Gothic", 9F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
-        Label1.Location = New Point(17, 21)
-        Label1.Margin = New Padding(5, 0, 5, 0)
+        Label1.Location = New Point(15, 16)
+        Label1.Margin = New Padding(4, 0, 4, 0)
         Label1.Name = "Label1"
-        Label1.Size = New Size(135, 15)
+        Label1.Size = New Size(59, 12)
         Label1.TabIndex = 10
-        Label1.Text = "Edit a reminder:"
+        Label1.Text = "Reminder:"
         Label1.TextAlign = ContentAlignment.TopCenter
         ' 
         ' ReminderTitleBox
         ' 
-        ReminderTitleBox.Location = New Point(170, 14)
-        ReminderTitleBox.Margin = New Padding(5, 4, 5, 4)
+        ReminderTitleBox.Location = New Point(149, 10)
+        ReminderTitleBox.Margin = New Padding(4, 3, 4, 3)
         ReminderTitleBox.Name = "ReminderTitleBox"
-        ReminderTitleBox.Size = New Size(228, 37)
+        ReminderTitleBox.Size = New Size(200, 29)
         ReminderTitleBox.TabIndex = 9
         ReminderTitleBox.Text = ""
         ' 
         ' UpdateWindow
         ' 
-        AutoScaleDimensions = New SizeF(8F, 20F)
+        AutoScaleDimensions = New SizeF(7F, 15F)
         AutoScaleMode = AutoScaleMode.Font
-        ClientSize = New Size(410, 507)
+        ClientSize = New Size(359, 380)
         Controls.Add(ExButton)
         Controls.Add(SaveButton)
         Controls.Add(Label3)
@@ -142,8 +138,9 @@ Partial Class UpdateWindow
         Controls.Add(ReminderDescBox)
         Controls.Add(Label1)
         Controls.Add(ReminderTitleBox)
+        Margin = New Padding(3, 2, 3, 2)
         Name = "UpdateWindow"
-        Text = "Update Reminder"
+        Text = "View reminder"
         ResumeLayout(False)
         PerformLayout()
     End Sub
